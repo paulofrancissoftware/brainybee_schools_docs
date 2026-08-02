@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Security Overview - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Security Overview</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="data-privacy-addendum.html">DPA</a><a href="security-overview.html">Security</a><a href="subprocessors.html">Subprocessors</a><a href="data-requests.html">Requests</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">DRAFT - SECURITY PROGRAM VERIFICATION REQUIRED</div>
+    <h1>Brainy Bee Schools Security Overview</h1>
+    <p class="meta"><strong>Draft date:</strong> August 1, 2026<br><strong>Security contact:</strong> <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a></p>
+
+    <div class="summary">Brainy Bee Schools uses layered technical and administrative safeguards intended to protect school and student information. This public overview avoids operational details that could weaken security. More detailed responses may be provided to a verified School under appropriate confidentiality terms.</div>
+
+    <h2>1. Security governance</h2>
+    <ul>
+      <li>A designated coordinator is responsible for the written information security program.</li>
+      <li>Risks to the confidentiality, integrity, and availability of student information are assessed at least annually and after material system changes.</li>
+      <li>Policies cover access, credentials, service providers, secure development, retention, deletion, incidents, and recovery.</li>
+      <li>Security findings are tracked to resolution according to risk.</li>
+    </ul>
+
+    <h2>2. Identity and access</h2>
+    <ul>
+      <li>Production school users authenticate through Clever and receive a Firebase session tied to the verified Clever identity.</li>
+      <li>Access is evaluated using organization membership, role, school license status, class membership, and class policy.</li>
+      <li>Students cannot grant themselves teacher permissions, edit organization licenses, or browse the full school directory.</li>
+      <li>Authorized teachers receive access only to assigned or owned classes and associated educational records.</li>
+      <li>Administrative access to production services is restricted to personnel with a documented need and is reviewed periodically.</li>
+    </ul>
+
+    <h2>3. Data protection</h2>
+    <ul>
+      <li>Network communication with Firebase, Clever, and published legal resources uses HTTPS/TLS.</li>
+      <li>Student Data is stored in Firebase services with access controlled by authenticated identities, application authorization checks, and Firestore security rules.</li>
+      <li>Secrets and privileged service-account credentials must be stored outside source control and rotated when exposure is suspected.</li>
+      <li>Local app data is isolated within the mobile app's storage. Some local data may be included in Apple or Android device backups unless excluded by platform configuration.</li>
+      <li>Student information is not used for advertising, and the Android Schools manifest removes advertising-ID permissions.</li>
+    </ul>
+
+    <h2>4. Application safeguards</h2>
+    <ul>
+      <li>Teacher and student interfaces expose different functionality based on verified school role.</li>
+      <li>Class policies restrict student access to assignments, practice modes, results, settings, reminders, and customization features.</li>
+      <li>Students cannot use the current Service to publish a public profile, public message, or unrestricted free-text post.</li>
+      <li>OAuth state is short-lived and single-use to reduce sign-in replay risk.</li>
+      <li>Input size and document identifier checks are applied to school administration and Firebase operations.</li>
+    </ul>
+
+    <h2>5. Service providers</h2>
+    <p>Provider reviews the purpose and data access of services that process Student Data and seeks written privacy and security assurances appropriate to their role. The current providers are listed on the <a href="subprocessors.html">Subprocessor List</a>.</p>
+    <p>New providers that materially process Student Data are evaluated before use and communicated to Schools according to the Data Privacy Addendum.</p>
+
+    <h2>6. Logging and monitoring</h2>
+    <p>Authentication, cloud function, application error, and administrative events may be logged to diagnose failures and investigate misuse. Logs are access-restricted and subject to the published retention schedule. Student answers and rosters should not be copied into ordinary diagnostic messages.</p>
+
+    <h2>7. Security incidents</h2>
+    <p>Provider maintains a written incident-response process to validate, contain, investigate, remediate, document, and learn from suspected incidents. Affected Schools are notified without unreasonable delay and, under the proposed DPA, no later than 72 hours after confirmation unless law enforcement or applicable law requires otherwise.</p>
+    <p>To report a suspected vulnerability or incident, email <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a> with "Brainy Bee Schools Security" in the subject. Do not include student records, credentials, or exploit details in an unencrypted initial email.</p>
+
+    <h2>8. Retention, deletion, and recovery</h2>
+    <p>Student Data is retained only while needed for the authorized educational purpose and is deleted according to the <a href="data-retention-deletion.html">Data Retention and Deletion Policy</a>. Backups are used for service recovery, are not available for ordinary product use, and expire through rotation after production deletion.</p>
+    <p>For an authorized stop-collection request, Brainy Bee can suspend the affected organization or student, revoke active sessions for exclusive accounts, and prevent application writes while the request is reviewed. Releasing a hold requires the identifier of the request that created it.</p>
+
+    <h2>9. School responsibilities</h2>
+    <ul>
+      <li>Approve the Service through an authorized school or district process.</li>
+      <li>Configure Clever sharing and remove users who no longer require access.</li>
+      <li>Limit staff access to legitimate educational interests.</li>
+      <li>Protect devices and accounts, use available multi-factor authentication for administrative systems, and avoid shared staff credentials.</li>
+      <li>Store exports only in School-approved systems and report suspected misuse promptly.</li>
+    </ul>
+
+    <h2>10. Current assurance status</h2>
+    <p>Brainy Bee Schools does not currently claim SOC 2, ISO 27001, FedRAMP, or COPPA Safe Harbor certification. A claim of legal compliance or certification will be made only when supported by the applicable review or approval.</p>
+
+    <p class="fine-print">Before publication, the draft security commitments must be checked against production Firebase rules, administrator access, credential storage, backup settings, logging configuration, deletion tests, risk assessment, and incident-response documentation.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Draft security overview | August 1, 2026</div></footer>
+</body>
+</html>

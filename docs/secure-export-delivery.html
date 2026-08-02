@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Secure Export Delivery Procedure - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Secure Export Delivery</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="data-retention-deletion.html">Retention</a><a href="data-requests.html">Requests</a><a href="security-overview.html">Security</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">DRAFT - TEST WITH SYNTHETIC DATA BEFORE OPERATIONAL USE</div>
+    <h1>Secure Export Delivery Procedure</h1>
+    <p class="meta"><strong>Owner:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Draft date:</strong> August 2, 2026<br><strong>Applies to:</strong> exports containing School Data or Student Data</p>
+
+    <div class="summary">Brainy Bee sends a sensitive export only to a verified, authorized recipient through an authenticated transfer channel approved by the School. Student Data is never attached to ordinary email, placed in GitHub, or shared through a public or "anyone with the link" URL.</div>
+
+    <h2>1. Approved delivery channel</h2>
+    <p>The default channel is a secure upload portal, managed file-transfer service, or SFTP location supplied or approved in writing by the School. It must restrict access to a named recipient, protect transmission using current encryption, and allow Brainy Bee or the School to remove access after delivery.</p>
+    <p>A dedicated business file-sharing service may be approved only after Brainy Bee records the account owner, access controls, processing terms, retention behavior, and any required subprocessor or cross-border review. A personal cloud-storage account is not approved for Student Data.</p>
+    <p>If no approved channel is available, Brainy Bee pauses delivery and asks the School to nominate one. The following are prohibited:</p>
+    <ul>
+      <li>ordinary email attachments or Student Data copied into an email body;</li>
+      <li>public links or links available to anyone who receives or forwards them;</li>
+      <li>GitHub, source-control issues, consumer chat, text messages, or social media;</li>
+      <li>personal Google Drive, Dropbox, OneDrive, or similar accounts not approved for School Data; and</li>
+      <li>unencrypted removable media.</li>
+    </ul>
+
+    <h2>2. Verify the recipient and scope</h2>
+    <ol>
+      <li>Assign the request a reference that does not contain a student's name.</li>
+      <li>Confirm the requester through a known School administrator, School-domain account, or callback using contact information already on file.</li>
+      <li>Record the recipient's name, title, organization, official email, requested scope, authority, and approved delivery channel.</li>
+      <li>For a parent, guardian, or eligible student request, coordinate with the School unless law or the applicable agreement requires another process.</li>
+      <li>Resolve any doubt about identity, authority, or scope before generating or uploading data.</li>
+    </ol>
+
+    <h2>3. Prepare the disclosure copy</h2>
+    <ol>
+      <li>Generate the scoped administrative export on the access-restricted operator device and verify its manifest and checksums.</li>
+      <li>Treat that automatic export as an internal before-state archive. Do not send it unchanged to the requester.</li>
+      <li>Create a separate disclosure copy containing only the records and fields authorized for the request in an appropriate readable format, such as CSV, JSON, or PDF.</li>
+      <li>Exclude credentials, OAuth tokens, security configuration, internal administrative notes, unrelated users, and information outside the verified scope.</li>
+      <li>Perform a second-person review when another authorized person is available. Otherwise, pause and recheck the recipient, scope, file list, and a sample of every output file before upload.</li>
+      <li>Name the package with the request reference, not a student's name, and record a SHA-256 checksum for the final package.</li>
+    </ol>
+
+    <h2>4. Transfer and confirm</h2>
+    <ol>
+      <li>Upload only the disclosure copy to the approved location.</li>
+      <li>Confirm the recipient is a named viewer or downloader and general access is restricted. Do not grant edit or resharing permission unless required by the School's portal.</li>
+      <li>Set the shortest practical expiration offered by the service, normally no more than 7 days.</li>
+      <li>Send a notification that contains the request reference and access instructions, but no Student Data.</li>
+      <li>Ask the recipient to confirm successful receipt through the verified School contact channel.</li>
+      <li>Record the date, channel, recipient, package checksum, expiration, confirmation, and operator. Do not copy the exported Student Data into the request record.</li>
+    </ol>
+
+    <h2>5. Remove temporary copies</h2>
+    <p>Revoke transfer access and delete the uploaded transfer copy as soon as receipt is confirmed, normally within 7 days and no later than 30 days after delivery. Securely remove the local disclosure working copy on the same schedule. Retain only the limited request record, checksum, and completion evidence required by the retention policy.</p>
+    <p>An internal before-state archive created for a correction, hold, or deletion is retained only while needed to verify and safely complete that operation, then removed according to the approved request-record schedule. It is not stored in this public repository.</p>
+
+    <h2>6. Failed or misdirected delivery</h2>
+    <p>Stop the transfer, revoke access, and notify the Privacy Officer immediately if the wrong recipient, wrong scope, public sharing, unexpected download, or another disclosure risk is discovered. Preserve minimal evidence and follow the incident-response procedure before retrying delivery.</p>
+
+    <h2>Delivery record</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Request reference and scope</th><td>&nbsp;</td></tr>
+          <tr><th>Authority and verification method</th><td>&nbsp;</td></tr>
+          <tr><th>Recipient and official contact</th><td>&nbsp;</td></tr>
+          <tr><th>Approved transfer channel</th><td>&nbsp;</td></tr>
+          <tr><th>Disclosure files reviewed</th><td>&nbsp;</td></tr>
+          <tr><th>SHA-256 checksum</th><td>&nbsp;</td></tr>
+          <tr><th>Uploaded and expires</th><td>&nbsp;</td></tr>
+          <tr><th>Receipt confirmed</th><td>&nbsp;</td></tr>
+          <tr><th>Access revoked and copies removed</th><td>&nbsp;</td></tr>
+          <tr><th>Operator and reviewer</th><td>&nbsp;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fine-print">Before this procedure is approved, complete a synthetic export transfer with the pilot School, verify that only the named recipient can download it, revoke access, and record deletion of the temporary copies. This procedure should be reviewed with applicable School requirements and qualified privacy counsel.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Draft secure export delivery procedure | August 2, 2026</div></footer>
+</body>
+</html>
