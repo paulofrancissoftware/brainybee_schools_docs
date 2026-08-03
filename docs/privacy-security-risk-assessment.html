@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Privacy and Security Risk Assessment - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Risk Assessment</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="security-overview.html">Security</a><a href="information-security-program.html">Program</a><a href="incident-response-plan.html">Incidents</a><a href="quebec-privacy-impact-assessment.html">PIA</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">INITIAL ASSESSMENT COMPLETE - COUNSEL REVIEW PENDING</div>
+    <h1>Privacy and Security Risk Assessment</h1>
+    <p class="meta"><strong>Assessor and owner:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Assessment date:</strong> August 2, 2026<br><strong>Scope:</strong> Brainy Bee Schools mobile apps, Firebase/Google Cloud backend, Clever integration, source repositories, and manual administration</p>
+
+    <div class="summary">The assessment considered reasonably foreseeable internal and external risks to children's and school information. The current release may proceed to a limited school pilot with the controls below, subject to counsel review, school authorization, store disclosure completion, and continued monitoring.</div>
+
+    <h2>1. Method</h2>
+    <p>Likelihood and impact are scored from 1 (low) to 5 (very high). Residual score is likelihood multiplied by impact after controls: 1-4 low, 5-9 moderate, 10-15 high, and 16-25 critical. A high or critical residual risk blocks production unless the Privacy Officer documents additional mitigation and acceptance.</p>
+
+    <h2>2. Data sensitivity and exposure</h2>
+    <p>Student identity, class membership, answers, scores, progress, and teacher assignments are sensitive because they concern children and may be education records. The Service does not intentionally collect payment cards, government identifiers, precise location, contacts, health data, camera or microphone content, public posts, or advertising identifiers. Production processing is concentrated in Clever and Google Firebase/Cloud in the United States.</p>
+
+    <h2>3. Risk register</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Risk</th><th>Key safeguards</th><th>Residual</th><th>Owner/action</th></tr></thead>
+        <tbody>
+          <tr><td>Unauthorized privileged access or credential compromise</td><td>Named operator account, MFA requirement, no service-account keys, Secret Manager, dedicated least-privilege runtime identity, quarterly access review</td><td>Moderate: 8</td><td>Privacy Officer; verify MFA and access review quarterly</td></tr>
+          <tr><td>Cross-school, cross-class, or role escalation</td><td>Firestore rules, server-side organization/role/class checks, active-license checks, privacy holds, emulator authorization tests</td><td>Moderate: 5</td><td>Privacy Officer; rerun rules tests after schema or feature changes</td></tr>
+          <tr><td>Test or alternate sign-in bypass in production</td><td>Clever-only app bridges, demo and email/password paths removed, Firebase email provider disabled, test credentials not bundled</td><td>Low: 3</td><td>Release review on every production build</td></tr>
+          <tr><td>OAuth interception, replay, or stale state</td><td>HTTPS, random single-use state, five-minute expiry, delete-on-redemption transaction, TTL, authenticated scheduled cleanup every 15 minutes</td><td>Low: 4</td><td>Monitor callback and cleanup errors</td></tr>
+          <tr><td>Secret committed to source control</td><td>Prior key revoked and history rewritten, key patterns ignored, no runtime key files, Secret Manager, binary and repository secret scans</td><td>Moderate: 6</td><td>Scan before release; rotate immediately after suspected exposure</td></tr>
+          <tr><td>Firebase client API key reused by an unauthorized app</td><td>Firebase API restrictions, iOS bundle restriction, Android package and signing-certificate restrictions, browser-origin restriction</td><td>Low: 3</td><td>Add the Play App Signing SHA-1 before Play distribution and review restrictions after signing changes</td></tr>
+          <tr><td>Over-collection or collection after a stop request</td><td>Minimal Clever scopes and app fields, no ads/analytics SDK, reversible access hold, client writes require active access, manual scope inventory</td><td>Moderate: 6</td><td>Review data map before adding fields or SDKs</td></tr>
+          <tr><td>Failure to delete or incomplete offboarding</td><td>Guarded export/deletion tools, dry run, project/scope confirmation, emulator tests, residual verification, non-data receipt, seven-day recovery expiry</td><td>Moderate: 8</td><td>Use two-pass verification for every production deletion</td></tr>
+          <tr><td>Loss or leakage through a mobile device or backup</td><td>App sandbox, sign-out cleanup, role checks, no student passwords, Android backup disabled, iOS and Android app files excluded from backup/transfer</td><td>Moderate: 6</td><td>Schools manage devices and report loss promptly</td></tr>
+          <tr><td>Accidental database deletion or damaging write</td><td>Database deletion protection, seven-day point-in-time recovery, restricted administration, change review</td><td>Moderate: 6</td><td>Test a synthetic recovery at least annually</td></tr>
+          <tr><td>Provider or cross-border processing failure</td><td>Provider terms and security materials recorded, purpose limitation, minimal providers, public subprocessor notice, Quebec PIA, contractual review</td><td>Moderate: 9</td><td>Counsel validates agreements; reassess annually and on change</td></tr>
+          <tr><td>Delayed incident detection or notification</td><td>30-day operational logs, 400-day required audit logs, written response plan, dedicated contact, 72-hour contractual school target after confirmation</td><td>Moderate: 8</td><td>Run annual tabletop and preserve private incident register</td></tr>
+          <tr><td>Single-person operational dependency</td><td>Written runbooks, version-controlled configuration, documented contacts, scoped command-line tools, private evidence checklist</td><td>Moderate: 9</td><td>Identify an emergency technical contact before paid expansion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>4. Required continuing actions</h2>
+    <ul>
+      <li>Repeat the successfully completed August 2, 2026 synthetic point-in-time recovery exercise at least annually. Complete a School-approved synthetic export-transfer exercise before that workflow is used with real Student Data.</li>
+      <li>Review Google and Clever terms, assurance materials, and processing locations annually and after notice of change.</li>
+      <li>Review App Store and Google Play privacy disclosures against each release binary.</li>
+      <li>Obtain qualified US and Quebec legal review before removing legal draft notices or signing the pilot documents.</li>
+      <li>Identify an emergency technical contact and evaluate cyber/privacy insurance before a paid or materially larger deployment.</li>
+    </ul>
+
+    <h2>5. Decision</h2>
+    <p>No residual technical risk is rated high or critical after the implemented controls. A limited, free pilot may proceed after the launch gates in the Publication Readiness Checklist are completed. This decision must be revisited after a material architecture change, a security event, a new subprocessor, or no later than August 2, 2027.</p>
+    <p><strong>Accepted by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Date:</strong> August 2, 2026</p>
+    <p class="fine-print">Detailed access evidence, command output, provider account records, and completed incident records are private and are not stored in this public repository.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Initial Privacy and Security Risk Assessment | August 2, 2026</div></footer>
+</body>
+</html>

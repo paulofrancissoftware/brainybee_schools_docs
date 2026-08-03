@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -24,7 +24,7 @@
       <table>
         <thead><tr><th>Provider</th><th>Service and purpose</th><th>Information involved</th><th>Processing location</th></tr></thead>
         <tbody>
-          <tr><td><strong>Google LLC</strong><br>Firebase and Google Cloud</td><td>Firebase Authentication, Firestore database, Firebase Storage, Cloud Functions, hosting infrastructure, logging, and service security</td><td>Account and service identifiers, names and email when provided, school and class records, assignments, student results and progress, preferences, school branding, request metadata, and technical/security logs</td><td>United States and other locations described in Google's service terms; exact Firebase resource locations must be confirmed in the production project</td></tr>
+          <tr><td><strong>Google LLC</strong><br>Firebase and Google Cloud</td><td>Firebase Authentication, Firestore database, Cloud Functions, Cloud Scheduler, logging, and service security. Firebase Storage is not initialized for the production project.</td><td>Account and service identifiers, names and email when provided, school and class records, assignments, student results and progress, preferences, request metadata, and technical/security logs</td><td>Production Firestore: <code>nam5</code> United States multi-region. Cloud Functions and Scheduler: <code>us-central1</code>. Other processing locations are described in Google's service terms.</td></tr>
           <tr><td><strong>Clever, Inc.</strong></td><td>School single sign-on, identity authorization, roster, class/section, grade, school, and district integration</td><td>Clever identifier, display name, email when provided, role, school/district, grade, class membership, OAuth tokens used by the server during sign-in, and authorization metadata</td><td>United States and other locations described in Clever's service terms</td></tr>
         </tbody>
       </table>
@@ -33,8 +33,8 @@
     <h2>Platforms and public-document hosting</h2>
     <p>The following platforms are not intended to receive Student Data from Brainy Bee, but may receive ordinary platform or web request information:</p>
     <ul>
-      <li><strong>Apple Inc.</strong> distributes the iOS app, provides operating-system services, and may maintain user-controlled device backups. Brainy Bee does not receive payment-card data from Apple for the Schools Service.</li>
-      <li><strong>Google LLC / Google Play.</strong> distributes the Android app, provides operating-system services, and may maintain user-controlled device backups. The Schools Service does not use Google Play billing.</li>
+      <li><strong>Apple Inc.</strong> distributes the iOS app and provides operating-system services. Brainy Bee excludes app-managed files from Apple cloud backup and does not receive payment-card data from Apple for the Schools Service.</li>
+      <li><strong>Google LLC / Google Play.</strong> distributes the Android app and provides operating-system services. Brainy Bee disables Android app backup and device transfer for the Schools app. The Schools Service does not use Google Play billing.</li>
       <li><strong>GitHub, Inc. / Microsoft.</strong> will host these public legal pages through GitHub Pages. Visitors' IP address and request metadata may be processed when they open the public pages. Student records should never be submitted to GitHub.</li>
     </ul>
 
@@ -42,7 +42,7 @@
     <p>Brainy Bee will evaluate new Subprocessors before allowing them to process Student Data. Under the proposed Data Privacy Addendum, Schools receive at least 30 days' notice before a new provider materially processes Student Data when practicable. Schools may submit a reasonable privacy objection during that period.</p>
     <p>Questions or objections may be sent to <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a>.</p>
 
-    <p class="fine-print">Provider locations and contract assurances must be confirmed against the production Firebase and Clever agreements before this list becomes final.</p>
+    <p class="fine-print">Production locations and the applicable Google and Clever privacy/security terms were recorded in the Subprocessor Assurance Register on August 2, 2026. Counsel should confirm that those written terms are sufficient for the intended schools and jurisdictions before this list becomes final.</p>
   </main>
   <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Draft subprocessor list | August 2, 2026</div></footer>
 </body>

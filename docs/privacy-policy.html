@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -32,7 +32,7 @@
     <p><strong>Operator responsible for this Service:</strong><br>
       Chi Cheung Lau<br>
       1940 Rue Cloutier, Brossard, Quebec J4Z 0S4, Canada<br>
-      Phone: <a href="tel:+15144510030">+1 514-451-0030</a><br>
+      Phone: <a href="tel:+15144510030">+1&nbsp;514&#8209;451&#8209;0030</a><br>
       Email: <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a></p>
     <p><strong>Privacy Officer:</strong> Chi Cheung Lau, Owner and Privacy Officer, reachable using the contact information above.</p>
 
@@ -50,9 +50,9 @@
           <tr><td>School and roster</td><td>School or district identifier and name, class or section identifiers and names, teacher and student class membership, school year, grade or grade band, license and membership status</td><td>Place users in the correct school and classes and limit access to authorized educational records</td></tr>
           <tr><td>Assignments and activity</td><td>Assignment name and configuration, available dates, selected math operations and levels, class controls, participation, answers, scores, percentages, question-level reports, duration, mode, and completion time</td><td>Deliver math practice, calculate results, provide feedback, and let authorized teachers review student progress</td></tr>
           <tr><td>Progress and preferences</td><td>Achievement levels and badges, avatar and display preferences, sound and keyboard preferences, active class context, and teacher-configured student options</td><td>Personalize the educational experience and preserve authorized settings</td></tr>
-          <tr><td>School-supplied content</td><td>Class and assignment labels, school name, primary contact information, and a school logo uploaded by authorized staff</td><td>Administer and brand the school workspace</td></tr>
+          <tr><td>School-supplied content</td><td>Class and assignment labels, school name, and primary contact information supplied by authorized staff</td><td>Administer the school workspace</td></tr>
           <tr><td>Technical and security</td><td>Device or service identifiers, IP address and request metadata received by service providers, sign-in state, timestamps, error and diagnostic information, and security logs</td><td>Operate, troubleshoot, secure, and prevent misuse of the Service</td></tr>
-          <tr><td>Local device information</td><td>In-progress game state, notification schedule, sound preferences, local cache, and active class context stored on the device</td><td>Resume activity and remember local preferences. Some local information may be included in operating-system backups.</td></tr>
+          <tr><td>Local device information</td><td>In-progress game state, notification schedule, sound preferences, local cache, and active class context stored on the device</td><td>Resume activity and remember local preferences. The Schools apps exclude app-managed files from operating-system cloud backup and device transfer.</td></tr>
         </tbody>
       </table>
     </div>
@@ -62,7 +62,7 @@
     <h2>4. How information is collected</h2>
     <ul>
       <li><strong>From the school or Clever:</strong> authorized identity, roster, class, grade, and school information.</li>
-      <li><strong>From teachers and authorized staff:</strong> assignments, class controls, labels, school information, and optional school branding.</li>
+      <li><strong>From teachers and authorized staff:</strong> assignments, class controls, labels, and school information.</li>
       <li><strong>From use of the Service:</strong> answers, scores, progress, preferences, timestamps, and technical events generated when a user signs in or practices math.</li>
       <li><strong>From devices and service providers:</strong> identifiers, request metadata, local settings, and security or diagnostic information needed to provide the Service.</li>
     </ul>
@@ -98,10 +98,10 @@
     <p>We retain personal information only for as long as reasonably necessary for the specific school-authorized purpose. We do not retain children's personal information indefinitely.</p>
     <ul>
       <li>School account, roster, class, assignment, and progress data is retained while the school's account is active and the information remains needed for current or school-requested historical educational reporting.</li>
-      <li>Following termination or an authorized deletion request, the school normally receives a 30-day export window. Targeted production deletion is completed within 60 days, and residual backup copies expire within 90 days after production deletion, unless law requires a different period.</li>
-      <li>Clever OAuth security state normally expires after five minutes and is deleted after successful redemption.</li>
-      <li>Security and diagnostic records are retained for no more than 12 months unless they are needed longer to investigate a specific incident, prevent abuse, resolve a dispute, or meet a legal requirement.</li>
-      <li>Local device information remains until it is cleared, the app is removed, or the operating system replaces or expires a device backup.</li>
+      <li>Following termination or an authorized deletion request, the school normally receives a 30-day export window. Targeted production deletion is completed within 60 days unless law requires a different period. Inaccessible Firestore point-in-time recovery versions expire automatically within seven days; no longer-lived managed Firestore backups are enabled.</li>
+      <li>Clever OAuth security state expires after five minutes, is deleted after successful redemption, and is also removed by an automated cleanup that runs every 15 minutes.</li>
+      <li>Ordinary application and service logs are configured for 30-day rolling retention. Google-required audit logs are retained in a locked log bucket for 400 days. A narrowly scoped incident record may be kept longer when needed for investigation or law.</li>
+      <li>Local device information remains until it is cleared or the app is removed. App-managed files are excluded from Android and Apple cloud backup and device transfer.</li>
     </ul>
     <p>The complete schedule and school offboarding process appear in our <a href="data-retention-deletion.html">Data Retention and Deletion Policy</a>.</p>
 
@@ -119,7 +119,7 @@
     <p>Instructions are available in the <a href="data-requests.html">Data Request Procedure</a>. We will not require more verification information than is reasonably necessary and will not disclose student information to an unverified requester.</p>
 
     <h2>10. Security</h2>
-    <p>We maintain a written information security program designed for the sensitivity of student information and the size and scope of the Service. Safeguards include role-based access, Firebase Authentication, encrypted network transport, school and class authorization checks, restricted administrative access, service-provider review, logging, backups, and incident-response procedures.</p>
+    <p>We maintain a written information security program designed for the sensitivity of student information and the size and scope of the Service. Safeguards include Clever-only production authentication, role-based access, encrypted network transport, school and class authorization checks, restricted administrative access, service-provider review, logging, database deletion protection, tested lifecycle tools, and incident-response procedures.</p>
     <p>No security measure can guarantee absolute security. Schools and users should protect credentials, keep devices updated, and promptly report suspected misuse. More information is available in the <a href="security-overview.html">Security Overview</a>.</p>
 
     <h2>11. International and cross-border processing</h2>
@@ -133,7 +133,7 @@
     <p><strong>Privacy Officer:</strong> Chi Cheung Lau, Owner and Privacy Officer<br>
       <strong>Operator:</strong> Chi Cheung Lau, doing business as Brainy Bee<br>
       <strong>Email:</strong> <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a><br>
-      <strong>Phone:</strong> <a href="tel:+15144510030">+1 514-451-0030</a><br>
+      <strong>Phone:</strong> <a href="tel:+15144510030">+1&nbsp;514&#8209;451&#8209;0030</a><br>
       <strong>Mail:</strong> 1940 Rue Cloutier, Brossard, Quebec J4Z 0S4, Canada</p>
     <p>We aim to acknowledge privacy requests promptly and provide a substantive response within the period required by applicable law. Filing a privacy request will not result in retaliation or a lower quality of educational service, although deletion or an end to collection may make a school account unusable.</p>
 

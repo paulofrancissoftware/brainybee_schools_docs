@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Written Information Security Program - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Security Program</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="security-overview.html">Security</a><a href="incident-response-plan.html">Incidents</a><a href="privacy-security-risk-assessment.html">Risk</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">OPERATIONAL POLICY IN EFFECT - COUNSEL REVIEW PENDING</div>
+    <h1>Written Information Security Program</h1>
+    <p class="meta"><strong>Program owner and coordinator:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Adopted:</strong> August 2, 2026<br><strong>Review:</strong> At least annually and after a material system, provider, legal, or security change</p>
+
+    <div class="summary">This program establishes safeguards appropriate to Brainy Bee's current size, the school-authorized purpose of the Service, and the sensitivity of children's and education information. It applies to production systems, source code, operator devices, service providers, and paper or electronic records controlled by Brainy Bee.</div>
+
+    <h2>1. Objectives</h2>
+    <ul>
+      <li>Protect the confidentiality, integrity, and availability of School Data and Student Data.</li>
+      <li>Prevent unauthorized collection, access, disclosure, alteration, loss, and destruction.</li>
+      <li>Collect and retain only information needed for the documented educational, security, support, or legal purpose.</li>
+      <li>Detect, contain, investigate, remediate, and document suspected security events.</li>
+    </ul>
+
+    <h2>2. Information and systems in scope</h2>
+    <ul>
+      <li>Clever identity, authorization, roster, school, class, role, and grade information.</li>
+      <li>Firebase Authentication accounts; Firestore organizations, memberships, classes, assignments, policies, results, progress, preferences, and access records.</li>
+      <li>Cloud Functions, Scheduler, Secret Manager, Cloud Logging, Firebase rules, source repositories, release artifacts, and administrative lifecycle tools.</li>
+      <li>Operator devices and private records used for contracts, verified requests, exports, deletion receipts, incidents, and provider review.</li>
+    </ul>
+    <p>Firebase Storage is not initialized for production. The Schools apps do not collect camera, microphone, precise location, contacts, advertising identifiers, or payment-card data.</p>
+
+    <h2>3. Administrative safeguards</h2>
+    <ul>
+      <li>The Privacy Officer owns this program, the risk assessment, provider review, incident response, retention schedule, and annual report.</li>
+      <li>Production access is limited to a documented business need. Privileged access is reviewed quarterly and removed promptly when no longer needed.</li>
+      <li>Multi-factor authentication is required where supported for GitHub, Google/Firebase, Clever, Apple, and Google Play administrative accounts.</li>
+      <li>Firebase client API keys use API restrictions and mobile app or web-origin restrictions. Android signing-certificate restrictions are updated whenever the release signing identity changes.</li>
+      <li>Student Data is not placed in public repositories, ordinary issue trackers, analytics tools, or unencrypted support messages.</li>
+      <li>Schools authorize use through an institutional representative. Teachers and students cannot change organization licenses or production administration.</li>
+      <li>The operator completes security and privacy refresher training at least annually and records the date and topics in the private evidence register.</li>
+    </ul>
+
+    <h2>4. Technical safeguards</h2>
+    <ul>
+      <li>Production users authenticate through Clever; email/password and demo authentication are disabled and absent from production app bridges.</li>
+      <li>Firestore rules and server-side checks enforce organization, role, class, license, and privacy-hold boundaries. Rules and lifecycle procedures are emulator-tested.</li>
+      <li>Functions run under a dedicated least-privilege service account. Secrets are stored in Secret Manager, and privileged key files are prohibited from source control.</li>
+      <li>OAuth state is random, single-use, expires after five minutes, is deleted after redemption, and is cleaned automatically every 15 minutes.</li>
+      <li>Transport uses HTTPS/TLS. Mobile app files are excluded from operating-system cloud backup and device transfer.</li>
+      <li>Firestore database deletion protection and seven-day point-in-time recovery are enabled. Longer-lived managed Firestore backups are not enabled.</li>
+      <li>Ordinary logs expire after 30 days; Google-required audit logs expire after 400 days. Application logging avoids roster contents and student answers.</li>
+    </ul>
+
+    <h2>5. Secure development and change control</h2>
+    <ul>
+      <li>Changes are reviewed through version control and tested at a scope proportionate to their risk.</li>
+      <li>Android and iOS release builds are checked for permissions, backup behavior, embedded credentials, third-party domains, and platform privacy declarations.</li>
+      <li>Firebase rules and functions are linted or emulator-tested before deployment. Production smoke tests avoid Student Data.</li>
+      <li>Known vulnerabilities are assessed for exploitability and exposure. Critical or actively exploitable issues receive immediate priority.</li>
+    </ul>
+
+    <h2>6. Providers and cross-border processing</h2>
+    <p>Before a provider materially processes Student Data, Brainy Bee records its purpose, data scope, processing locations, security information, applicable written terms, deletion provisions, and change-notice method in the <a href="subprocessor-assurance-register.html">Subprocessor Assurance Register</a>. Cross-border processing is reviewed in the <a href="quebec-privacy-impact-assessment.html">Quebec Privacy Impact Assessment</a>. Reviews occur annually and after a material provider change.</p>
+
+    <h2>7. Retention, requests, and disposal</h2>
+    <p>The <a href="data-retention-deletion.html">Data Retention and Deletion Policy</a> controls retention. Verified access, correction, hold, export, and deletion work uses guarded command-line tools with dry-run inventory, explicit project and scope confirmation, verification, and a receipt that does not reproduce Student Data.</p>
+
+    <h2>8. Incidents and continuity</h2>
+    <p>Suspected events are handled under the <a href="incident-response-plan.html">Incident Response Plan</a>. Recovery uses Firestore point-in-time recovery when appropriate; a non-personal synthetic recovery was completed successfully on August 2, 2026. Restored data must be re-evaluated against deletion requests, privacy holds, and current school authorization before it is returned to ordinary use.</p>
+
+    <h2>9. Testing, records, and annual report</h2>
+    <ul>
+      <li>At least annually, the coordinator reviews access, Firebase configuration, provider terms, retention, recovery, incident readiness, mobile disclosures, and the risk assessment.</li>
+      <li>After a material change or incident, affected controls are retested and this program is updated.</li>
+      <li>Evidence, completed checklists, incident records, exports, signed agreements, and deletion receipts are stored privately, never in this public repository.</li>
+      <li>The coordinator prepares an annual written report summarizing program status, material risks, providers, tests, incidents, and planned improvements.</li>
+    </ul>
+
+    <h2>10. Approval</h2>
+    <p><strong>Approved by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Approval date:</strong> August 2, 2026<br><strong>Next scheduled review:</strong> August 2, 2027</p>
+    <p class="fine-print">This operational policy is in effect. It is not a certification of legal compliance and remains subject to qualified privacy and security counsel review.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Written Information Security Program | August 2, 2026</div></footer>
+</body>
+</html>

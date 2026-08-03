@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Incident Response Plan - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Incident Response</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="security-overview.html">Security</a><a href="information-security-program.html">Program</a><a href="privacy-security-risk-assessment.html">Risk</a><a href="data-requests.html">Requests</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">OPERATIONAL PLAN IN EFFECT - COUNSEL REVIEW PENDING</div>
+    <h1>Privacy and Security Incident Response Plan</h1>
+    <p class="meta"><strong>Incident lead:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Report suspected events:</strong> <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a> | <a href="tel:+15144510030">+1&nbsp;514&#8209;451&#8209;0030</a><br><strong>Adopted:</strong> August 2, 2026</p>
+
+    <div class="summary">The goals are to protect people, stop unauthorized activity, preserve reliable evidence, restore secure service, meet school and legal notice duties, and prevent recurrence. Do not include Student Data, credentials, or exploit details in an unencrypted initial report.</div>
+
+    <h2>1. Events covered</h2>
+    <p>This plan applies to suspected or confirmed unauthorized access, disclosure, acquisition, alteration, loss, destruction, misuse, malware, credential exposure, cross-school access, privacy-hold failure, damaging administrative action, service-provider incident, or loss of a device or record containing School Data.</p>
+
+    <h2>2. Severity</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Level</th><th>Example</th><th>Initial response target</th></tr></thead>
+        <tbody>
+          <tr><td>Critical</td><td>Confirmed active access to Student Data, exposed privileged credential, broad cross-school disclosure, destructive attack</td><td>Immediately; begin containment within one hour when feasible</td></tr>
+          <tr><td>High</td><td>Likely unauthorized access, material provider incident, lost unprotected export, repeated authorization failure</td><td>Within four hours</td></tr>
+          <tr><td>Moderate</td><td>Limited suspected exposure, security configuration drift, contained malware without evidence of data access</td><td>Same business day</td></tr>
+          <tr><td>Low</td><td>Unsuccessful attempt, spam, non-sensitive availability issue, false positive</td><td>Within two business days</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. Activate and record</h2>
+    <ol>
+      <li>Open a private incident record using the blank register template; assign an incident ID, lead, start time, reporter, systems, and provisional severity.</li>
+      <li>Record facts separately from assumptions. Preserve timestamps, relevant log entry identifiers, hashes, screenshots, and provider case numbers without unnecessarily copying Student Data.</li>
+      <li>Do not discuss the incident in a public repository or ordinary public issue tracker.</li>
+    </ol>
+
+    <h2>4. Contain</h2>
+    <ul>
+      <li>Revoke exposed credentials, sessions, tokens, keys, links, or service-account access.</li>
+      <li>Apply an organization or user privacy hold when further collection or sign-in could increase harm.</li>
+      <li>Disable the affected function, integration, release, or account only to the extent needed to contain the event.</li>
+      <li>Preserve needed evidence before destructive cleanup when that can be done without prolonging exposure.</li>
+      <li>Contact Google, Clever, GitHub, Apple, or Google Play through the applicable security/support channel when their service is involved.</li>
+    </ul>
+
+    <h2>5. Investigate and assess</h2>
+    <ul>
+      <li>Determine what happened, when it began and ended, how it was detected, and whether access was successful.</li>
+      <li>Identify affected schools, users, jurisdictions, data categories, approximate record count, actors, systems, and recipients.</li>
+      <li>Assess whether information was viewed, acquired, changed, deleted, or made unavailable and whether safeguards reduced the likelihood of misuse.</li>
+      <li>Determine contractual, COPPA, FERPA, Quebec, state, regulator, insurer, law-enforcement, and app-platform obligations with counsel as needed.</li>
+    </ul>
+
+    <h2>6. Notify and communicate</h2>
+    <p>The Incident Lead approves all external messages. Affected Schools are notified without unreasonable delay and, under the draft DPA, no later than 72 hours after confirmation unless law enforcement or applicable law requires otherwise. An initial notice may be supplemented as facts become available.</p>
+    <p>A notice should state the nature and approximate timing, affected data and users, known or likely consequences, containment and remediation, recommended School action, contact information, and the timing of the next update. Do not speculate or include another School's information.</p>
+
+    <h2>7. Eradicate, recover, and verify</h2>
+    <ul>
+      <li>Remove the root cause, patch affected code or configuration, rotate secrets, and validate access policies.</li>
+      <li>Restore only from a trustworthy recovery point and reconcile restored records against deletion requests and privacy holds.</li>
+      <li>Run focused tests and monitor logs before returning the affected capability to service.</li>
+      <li>Document all containment, recovery, disclosure, and verification actions with time and actor.</li>
+    </ul>
+
+    <h2>8. Post-incident review</h2>
+    <p>Within 10 business days after closure when feasible, document root cause, timeline, impact, response effectiveness, lessons, control changes, owners, and due dates. Update the risk assessment, security program, provider review, retention policy, training, or product as needed.</p>
+
+    <h2>9. Evidence retention and privacy</h2>
+    <p>The private incident record is retained only as long as needed for investigation, legal obligations, and documented defense. It must be access-restricted and minimized. Remove Student Data from working copies when it is no longer necessary. The public repository contains only a blank template, never a completed register.</p>
+
+    <h2>10. Exercises</h2>
+    <p>Run and record at least one tabletop exercise annually and after a major change. Scenarios should rotate among credential exposure, cross-school access, lost export, provider outage/incident, and accidental deletion/recovery.</p>
+    <p><strong>Approved by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Next review:</strong> August 2, 2027</p>
+    <p class="fine-print">This plan is operational guidance, not legal advice. Notice decisions should be reviewed promptly with qualified counsel when an incident may affect personal information.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Incident Response Plan | August 2, 2026</div></footer>
+</body>
+</html>

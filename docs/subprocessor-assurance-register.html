@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Subprocessor Assurance Register - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Provider Assurance</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="subprocessors.html">Subprocessors</a><a href="security-overview.html">Security</a><a href="quebec-privacy-impact-assessment.html">PIA</a><a href="data-privacy-addendum.html">DPA</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">ASSURANCE REVIEW RECORDED - COUNSEL CONFIRMATION PENDING</div>
+    <h1>Subprocessor Assurance Register</h1>
+    <p class="meta"><strong>Reviewer:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Review date:</strong> August 2, 2026<br><strong>Next review:</strong> August 2, 2027 or earlier after a material provider notice</p>
+
+    <div class="summary">This register records the providers that materially process School Data or Student Data, the written privacy/security material reviewed, and the operating controls Brainy Bee applies. A dated private copy of the applicable accepted terms and account evidence should be preserved with each legal release.</div>
+
+    <h2>1. Core providers</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Provider</th><th>Purpose and data</th><th>Written assurances reviewed</th><th>Status and follow-up</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Google LLC</strong><br>Firebase and Google Cloud</td>
+            <td>Authentication, Firestore, Functions, Scheduler, Secret Manager, logging, and security. Processes identity, roster/class, assignments, results/progress, preferences, and technical metadata.</td>
+            <td><a href="https://cloud.google.com/terms/data-processing-addendum">Cloud Data Processing Addendum</a>; <a href="https://cloud.google.com/terms/subprocessors">Google Cloud Subprocessors</a>; <a href="https://cloud.google.com/security/compliance">Security and compliance resources</a>.</td>
+            <td>Operationally approved with data minimization, restricted IAM, United States resource locations, retention controls, and annual review. Counsel must confirm incorporation and sufficiency for US schools and Quebec cross-border processing.</td>
+          </tr>
+          <tr>
+            <td><strong>Clever, Inc.</strong></td>
+            <td>School SSO and authorized identity/roster integration. Processes Clever IDs, name/email when supplied, role, school/district, grade, class membership, OAuth tokens, and authorization metadata.</td>
+            <td><a href="https://www.clever.com/trust/terms/developers">Developer Terms and AnySchools DPA</a>; <a href="https://www.clever.com/trust/privacy/policy">Privacy Policy</a>; <a href="https://www.clever.com/trust/security/practices">Security Practices</a>; <a href="https://www.clever.com/trust/universal-dsa">Universal Data Sharing Agreement</a>.</td>
+            <td>Operationally approved for Clever-only school access and minimum necessary scopes. Counsel must confirm which Clever agreement applies to the production integration and preserve the executed/accepted version.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Distribution and public documentation</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Provider</th><th>Role</th><th>Student Data rule</th><th>Review</th></tr></thead>
+        <tbody>
+          <tr><td>Apple Inc.</td><td>iOS distribution and operating-system services</td><td>Do not send Student Data to App Store support or analytics. App-managed files are excluded from cloud backup.</td><td>Review App Store privacy disclosure and current developer terms before each release.</td></tr>
+          <tr><td>Google LLC / Google Play</td><td>Android distribution and operating-system services</td><td>Do not send Student Data to Play support or analytics. Android backup and device transfer are disabled.</td><td>Review Play Data safety answers and current developer terms before each release.</td></tr>
+          <tr><td>GitHub, Inc. / Microsoft</td><td>Public legal-page hosting through GitHub Pages</td><td>No Student Data, signed agreements, exports, incident evidence, or request records may be stored in this repository.</td><td>Public visitors may generate ordinary request metadata. Review privacy statement annually.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. Review procedure</h2>
+    <ol>
+      <li>Confirm the service remains necessary and data is limited to its documented purpose.</li>
+      <li>Review current privacy, security, incident, deletion, subprocessor, and cross-border terms.</li>
+      <li>Record material changes and assess whether School notice, objection, consent, or a revised PIA is required.</li>
+      <li>Preserve a dated private copy or reliable record of accepted terms and account acceptance.</li>
+      <li>Remove or replace a provider that cannot provide protection appropriate to the information and risk.</li>
+    </ol>
+
+    <h2>4. Decision</h2>
+    <p>Google Cloud/Firebase and Clever are approved operationally for the limited pilot configuration described in this register. No optional analytics, advertising, payment, crash-reporting, social, camera, QR-generation, or external font provider is authorized to receive Student Data.</p>
+    <p><strong>Approved by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Date:</strong> August 2, 2026</p>
+    <p class="fine-print">This register records an operational review and does not replace legal advice. Completed acceptance evidence and provider correspondence belong in private business storage.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Subprocessor Assurance Register | August 2, 2026</div></footer>
+</body>
+</html>

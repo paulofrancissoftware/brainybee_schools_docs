@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -13,7 +13,7 @@
     <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="data-retention-deletion.html">Retention</a><a href="data-requests.html">Requests</a><a href="security-overview.html">Security</a></nav>
   </header>
   <main class="document">
-    <div class="draft-banner">DRAFT - IMPLEMENTATION AND COUNSEL REVIEW REQUIRED</div>
+    <div class="draft-banner">DRAFT - COUNSEL REVIEW REQUIRED</div>
     <h1>Data Retention and Deletion Policy</h1>
     <p class="meta"><strong>Draft date:</strong> August 1, 2026<br><strong>Policy owner:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Review frequency:</strong> At least annually and after material product changes</p>
 
@@ -29,7 +29,7 @@
       <li>Do not use retained information for a new incompatible purpose.</li>
     </ul>
 
-    <h2>2. Proposed retention schedule</h2>
+    <h2>2. Retention schedule</h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Record</th><th>Normal retention</th><th>Deletion trigger and method</th></tr></thead>
@@ -38,14 +38,15 @@
           <tr><td>Firebase authentication and Clever identity mapping</td><td>While the user is authorized by an active School agreement</td><td>Delete or disable after School offboarding or verified deletion instruction, within the production deletion target</td></tr>
           <tr><td>Organization, roster, class membership, and class policy</td><td>Active agreement plus School-requested historical reporting period</td><td>School instruction, account termination, or loss of educational need; production deletion within 60 days</td></tr>
           <tr><td>Assignments, rooms, student answers, scores, question reports, progress, and achievements</td><td>Active agreement plus School-requested historical reporting period</td><td>Student-specific or School-wide deletion instruction, or termination; production deletion within 60 days</td></tr>
-          <tr><td>School branding and staff-supplied content</td><td>While the School account is active</td><td>Replacement, staff deletion, or account termination; production deletion within 60 days</td></tr>
+          <tr><td>Staff-supplied class and assignment content</td><td>While the School account is active and the content remains educationally necessary</td><td>Staff deletion, authorized request, or account termination; production deletion within 60 days</td></tr>
           <tr><td>User preferences and active school context stored in Firebase</td><td>While the account is active</td><td>User/School deletion instruction or account termination; production deletion within 60 days</td></tr>
-          <tr><td>Local app data and reminder settings</td><td>Until cleared, app removal, device reset, or operating-system backup expiry</td><td>User or device administrator clears app data; uninstall removes ordinary local app storage</td></tr>
-          <tr><td>Application, security, and diagnostic logs controlled by Provider</td><td>Up to 12 months</td><td>Rolling deletion, unless attached to a documented incident, abuse investigation, or legal obligation</td></tr>
+          <tr><td>Local app data and reminder settings</td><td>Until cleared, app removal, or device reset</td><td>User or device administrator clears app data; uninstall removes ordinary local app storage. App-managed files are excluded from Android and Apple cloud backup and device transfer.</td></tr>
+          <tr><td>Ordinary application, function, security, and diagnostic logs</td><td>30 days</td><td>Automatic rolling deletion from the Google Cloud <code>_Default</code> log bucket, unless minimal evidence is moved to an access-restricted incident file</td></tr>
+          <tr><td>Google-required audit logs</td><td>400 days</td><td>Automatic rolling deletion from Google's locked <code>_Required</code> log bucket</td></tr>
           <tr><td>Support correspondence containing Student Data</td><td>Until the request is resolved, then up to 12 months</td><td>Delete Student Data from the ticket after resolution where feasible; delete ticket at period end unless legally needed</td></tr>
           <tr><td>Deletion confirmations and compliance evidence</td><td>Up to 7 years, without copies of Student Data</td><td>Secure deletion at period end, unless a shorter period is legally required</td></tr>
           <tr><td>Signed agreements, invoices, and business records</td><td>Contract term plus the period required by tax, accounting, limitation, or procurement law</td><td>Secure deletion when the legal/business retention period ends; avoid including Student Data</td></tr>
-          <tr><td>Backups</td><td>Residual copies expire within 90 days after production deletion</td><td>Normal backup rotation; copies remain inaccessible to ordinary product use and are not restored except for disaster recovery</td></tr>
+          <tr><td>Firestore point-in-time recovery versions</td><td>Seven days</td><td>Automatic service expiration. No longer-lived managed Firestore backups are enabled; database deletion protection is enabled.</td></tr>
         </tbody>
       </table>
     </div>
@@ -57,7 +58,7 @@
       <li>Disable new student sign-in and collection at the end of the subscription or on the authorized date.</li>
       <li>Provide a structured export when requested. The normal export window is 30 days after termination.</li>
       <li>Delete affected production data no later than 60 days after termination or the authorized deletion request.</li>
-      <li>Allow residual encrypted backup copies to expire through rotation no later than 90 days after production deletion.</li>
+      <li>Allow inaccessible Firestore point-in-time recovery versions to expire through the configured seven-day retention period.</li>
       <li>Send written completion confirmation identifying scope and dates, but not reproducing Student Data.</li>
     </ol>
 
@@ -75,7 +76,7 @@
     <h2>7. Requests</h2>
     <p>Schools and verified families may submit retention or deletion questions using the <a href="data-requests.html">Data Request Procedure</a> or by emailing <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a>.</p>
 
-    <p class="fine-print">Manual Firebase export, correction, reversible access holds, scoped deletion, and post-operation verification are emulator-tested. Production access rules and Clever sign-in enforce active access status. The timing in this draft remains a proposed operational commitment until Clever cleanup, device and provider backup behavior, Cloud Logging retention, support records, and production administration are confirmed.</p>
+    <p class="fine-print">Manual Firebase export, correction, reversible access holds, scoped deletion, and post-operation verification are emulator-tested. Production access rules and Clever sign-in enforce active access status. OAuth expiry and scheduled cleanup, device backup exclusions, Cloud Logging retention, database deletion protection, and seven-day Firestore point-in-time recovery were verified in production on August 2, 2026. The legal commitments remain subject to counsel review.</p>
   </main>
   <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Draft retention policy | August 1, 2026</div></footer>
 </body>

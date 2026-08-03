@@ -34,6 +34,11 @@ Expected Privacy Policy URL for the iOS and Android apps:
 | Subprocessor List | Yes | No |
 | Data Request Procedure | Yes | No |
 | Secure Export Delivery Procedure | Yes | No; operational approval required |
+| Written Information Security Program | Yes | No; operational policy |
+| Privacy and Security Risk Assessment | Yes | No; review at least annually |
+| Incident Response Plan | Yes | No; operational plan |
+| Subprocessor Assurance Register | Yes | No; preserve accepted terms privately |
+| Quebec Cross-Border Privacy Impact Assessment | Yes | No; Quebec counsel review required |
 
 ## Word documents
 
@@ -43,7 +48,7 @@ Run on macOS:
 ./scripts/build-docx.sh
 ```
 
-Editable Word files are written to `exports/docx/`, including an assembled documentation packet. The secure export procedure is generated as a separate operational document and is not appended to the contract/legal packet.
+Editable Word files are written to `exports/docx/`, including an assembled legal packet and an assembled operational-governance packet. The blank incident-register CSV remains in `templates/`; completed registers must be stored privately.
 
 ## GitHub Pages setup
 
@@ -54,4 +59,4 @@ The included Actions workflow deploys `docs/` to GitHub Pages.
 3. In GitHub, open **Settings > Pages** and choose **GitHub Actions** as the source.
 4. Verify every page, then update the Schools app and store listings to the dedicated policy URL.
 
-Do not put Firebase keys, Clever secrets, student data, signed agreements, or privacy request evidence in this repository.
+Do not put Firebase keys, Clever secrets, student data, signed agreements, completed incident registers, exports, or privacy request evidence in this repository.

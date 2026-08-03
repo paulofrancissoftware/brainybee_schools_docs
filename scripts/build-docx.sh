@@ -22,6 +22,11 @@ pages=(
   subprocessors
   data-requests
   secure-export-delivery
+  information-security-program
+  privacy-security-risk-assessment
+  incident-response-plan
+  subprocessor-assurance-register
+  quebec-privacy-impact-assessment
 )
 
 titles=(
@@ -35,6 +40,11 @@ titles=(
   Brainy-Bee-Schools-Subprocessor-List
   Brainy-Bee-Schools-Data-Request-Procedure
   Brainy-Bee-Schools-Secure-Export-Delivery-Procedure
+  Brainy-Bee-Schools-Written-Information-Security-Program
+  Brainy-Bee-Schools-Privacy-and-Security-Risk-Assessment
+  Brainy-Bee-Schools-Incident-Response-Plan
+  Brainy-Bee-Schools-Subprocessor-Assurance-Register
+  Brainy-Bee-Schools-Quebec-Cross-Border-Privacy-Impact-Assessment
 )
 
 outputs=()
@@ -50,4 +60,7 @@ done
 legal_outputs=("${outputs[@]:0:9}")
 textutil -cat docx -output "$output_dir/Brainy-Bee-Schools-Legal-Documentation-Packet.docx" "${legal_outputs[@]}" >/dev/null
 
-print "Generated ${#outputs} individual Word documents and one combined packet in $output_dir"
+operational_outputs=("${outputs[@]:9}")
+textutil -cat docx -output "$output_dir/Brainy-Bee-Schools-Operational-Governance-Packet.docx" "${operational_outputs[@]}" >/dev/null
+
+print "Generated ${#outputs} individual Word documents and two combined packets in $output_dir"

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Quebec Cross-Border Privacy Impact Assessment - Brainy Bee Schools</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner"><a class="brand" href="index.html"><span class="brand-mark">BB</span><span class="brand-name">Brainy Bee Schools</span></a><span class="site-label">Quebec PIA</span></div>
+    <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="subprocessors.html">Subprocessors</a><a href="subprocessor-assurance-register.html">Assurance</a><a href="security-overview.html">Security</a></nav>
+  </header>
+  <main class="document">
+    <div class="draft-banner">INITIAL PIA COMPLETE - QUEBEC COUNSEL REVIEW REQUIRED</div>
+    <h1>Quebec Cross-Border Privacy Impact Assessment</h1>
+    <p class="meta"><strong>Organization:</strong> Chi Cheung Lau, doing business as Brainy Bee<br><strong>Person responsible:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Assessment date:</strong> August 2, 2026<br><strong>Legal reference:</strong> Section 17, Quebec Act respecting the protection of personal information in the private sector</p>
+
+    <div class="summary">Brainy Bee operates from Quebec and uses US-based cloud and school identity services. This assessment considers sensitivity, purpose, safeguards including contracts, and the legal regimes in the receiving locations. It records an initial operational decision; Quebec counsel must validate the analysis and applicable written agreements before the legal documents become final.</div>
+
+    <h2>1. Project and purpose</h2>
+    <p>Brainy Bee Schools provides school-authorized mental-math practice, assignments, class controls, and progress reporting. Cross-border processing is necessary because the production Firestore database is in the <code>nam5</code> United States multi-region, Cloud Functions and Scheduler are in <code>us-central1</code>, and Clever operates its school identity/roster services in the United States and other locations identified in its terms.</p>
+
+    <h2>2. People and information</h2>
+    <p>Affected people include students, teachers, and limited School contacts. Information may include Clever and Firebase identifiers, name and email when provided, role, school/district, grade, class membership, assignments, answers, scores, progress, preferences, authorization state, IP/request metadata, and security logs.</p>
+    <p>Student identity, education activity, and performance are treated as sensitive because they concern children and may be education records. The Service does not intentionally collect payment-card information, government identifiers, precise location, contacts, health data, camera or microphone content, public posts, or advertising identifiers.</p>
+
+    <h2>3. Necessity and proportionality</h2>
+    <ul>
+      <li>Processing is limited to school authorization, access control, math practice, teacher reporting, support, security, and legal obligations.</li>
+      <li>Production sign-in is Clever-only. The app does not use advertising, cross-context tracking, external QR generation, remote fonts, or optional analytics SDKs.</li>
+      <li>School and class access is role-limited. Students cannot browse an unrestricted directory or publish information publicly.</li>
+      <li>Data is retained under a written schedule and can be inventoried, exported, corrected, held, or deleted through guarded administrative tools.</li>
+    </ul>
+
+    <h2>4. Recipients, locations, and terms</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Recipient</th><th>Location and purpose</th><th>Contractual/security material</th></tr></thead>
+        <tbody>
+          <tr><td>Google LLC</td><td>United States multi-region and <code>us-central1</code>; authentication, database, functions, scheduling, secrets, and logs</td><td>Google Cloud agreement and <a href="https://cloud.google.com/terms/data-processing-addendum">Cloud Data Processing Addendum</a>, security measures, and subprocessor disclosures</td></tr>
+          <tr><td>Clever, Inc.</td><td>United States and other disclosed locations; school identity, SSO, roster, and OAuth authorization</td><td><a href="https://www.clever.com/trust/terms/developers">Developer Terms / AnySchools DPA</a>, privacy policy, security practices, and applicable data-sharing agreement</td></tr>
+          <tr><td>GitHub, Inc. / Microsoft</td><td>Public legal-page hosting; ordinary web request metadata only</td><td>GitHub terms and privacy statement; repository rule prohibits Student Data</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Legal environment considered</h2>
+    <p>Information processed in the United States may be subject to federal and state privacy, education, law-enforcement, court-order, and national-security authorities. US protections differ from Quebec law and may not provide identical rights or remedies. For participating US public schools, COPPA, FERPA, PPRA, state student-privacy law, School contracts, and provider terms may also protect the information. Contractual and technical controls reduce but cannot eliminate foreign-government or legal-process risk.</p>
+
+    <h2>6. Safeguards</h2>
+    <ul>
+      <li>Written purpose limits, no sale/advertising restrictions, confidentiality, security, incident, deletion, and subprocessor terms in the School DPA and provider terms.</li>
+      <li>HTTPS/TLS, Clever/Firebase authentication, organization/class authorization, least-privilege runtime IAM, Secret Manager, and restricted production administration.</li>
+      <li>Five-minute single-use OAuth state, scheduled cleanup, 30-day ordinary logs, 400-day required audit logs, and seven-day Firestore recovery versions.</li>
+      <li>Mobile backup exclusion, no Firebase Storage bucket, no advertising identifier permission, and no optional tracking SDK.</li>
+      <li>Verified data-request workflow, stop-collection holds, scoped deletion, and public notice of providers and cross-border processing.</li>
+    </ul>
+
+    <h2>7. Residual risks and mitigation</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Residual risk</th><th>Assessment</th><th>Mitigation/condition</th></tr></thead>
+        <tbody>
+          <tr><td>Different foreign legal protections or compelled access</td><td>Moderate</td><td>Minimize fields, encrypt transport, limit provider access, publish locations, review legal process terms, reassess annually</td></tr>
+          <tr><td>Provider or subprocessor change</td><td>Moderate</td><td>Annual and change-triggered review, 30-day School notice when practicable, reasonable objection process</td></tr>
+          <tr><td>Unauthorized cloud-account access</td><td>Moderate</td><td>MFA, least privilege, no service-account keys, logs, credential rotation, incident plan</td></tr>
+          <tr><td>Retention after deletion</td><td>Low to moderate</td><td>Production deletion target, seven-day recovery expiry, 30-day ordinary logs, limited 400-day required audit logs</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>8. Decision and conditions</h2>
+    <p>The Privacy Officer's preliminary assessment is that the limited processing may provide adequate protection for the pilot when all described safeguards and written agreements apply. Authorization is conditional on:</p>
+    <ul>
+      <li>qualified Quebec counsel confirming the Section 17 analysis and written contractual protection;</li>
+      <li>preserving private evidence of the applicable Google and Clever terms accepted for the production accounts;</li>
+      <li>not adding a new material provider, purpose, sensitive data category, or location without updating this assessment first; and</li>
+      <li>completing a French-language and Quebec-school-specific review before serving students through a Quebec school.</li>
+    </ul>
+    <p><strong>Preliminarily approved by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Date:</strong> August 2, 2026<br><strong>Next review:</strong> August 2, 2027 or before a material change</p>
+    <p class="fine-print">This document is an operational privacy assessment, not a legal opinion. Section 17 requires an assessment and an agreement that reflects its results and risk mitigation; qualified Quebec counsel should confirm that the final arrangements satisfy those requirements.</p>
+  </main>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Quebec Cross-Border PIA | August 2, 2026</div></footer>
+</body>
+</html>

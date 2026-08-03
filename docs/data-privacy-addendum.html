@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -107,7 +107,7 @@
       <li>Student Data remains available during the active subscription for current instruction and School-requested historical reporting;</li>
       <li>School has 30 days after termination to request an export;</li>
       <li>Provider deletes Student Data from production systems within 60 days after termination or an authorized deletion request; and</li>
-      <li>residual backup copies expire or are rendered inaccessible within 90 days after production deletion.</li>
+      <li>inaccessible Firestore point-in-time recovery versions expire through the configured seven-day retention period after production deletion. Provider does not enable longer-lived managed Firestore backups for the Service.</li>
     </ul>
     <p>Provider may retain a narrowly limited record if required by law, necessary to document compliance, resolve a dispute, or investigate security abuse. Such retained information remains protected, is isolated from ordinary product use, and is deleted when the reason ends.</p>
     <p>Upon request, Provider will give School written confirmation of completed deletion. The confirmation will identify the scope and completion date without reproducing Student Data.</p>
