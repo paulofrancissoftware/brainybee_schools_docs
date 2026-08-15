@@ -2,13 +2,13 @@
 
 Public legal, privacy, and school-procurement documentation for Brainy Bee Schools.
 
-> DRAFT: The documents are working drafts, not legal advice or a compliance certification. Do not publish or sign them until every item in `DRAFT-CHECKLIST.md` is complete and qualified privacy counsel has reviewed the final text.
+The Privacy Policy, COPPA Direct Notice, Data Retention and Deletion Policy, Security Overview, Subprocessor List, and Data Request Procedure are published operational documents effective August 15, 2026. The School Services Agreement, Data Privacy Addendum, and Parent/Guardian Notice remain review templates and are not ready for signature or distribution until the applicable legal and school review is complete.
 
 ## Recommended publishing model
 
 - Keep this repository public so schools and families can review the same current documents.
 - Publish the `docs/` directory with GitHub Pages.
-- Keep signed agreements, order forms, student data exports, support records, and deletion evidence in private storage outside this repository.
+- Keep signed agreements, order forms, student data exports, support records, deletion evidence, completed incident records, and confidential evidence supporting security or provider reviews in private storage outside this repository.
 - Tag each published legal release, for example `legal-v1.0.0`, so the exact terms accepted by a school can be reconstructed later.
 - Preserve a private copy of each signed agreement together with the applicable release tag or commit hash.
 
@@ -55,8 +55,8 @@ Editable Word files are written to `exports/docx/`, including an assembled legal
 The included Actions workflow deploys `docs/` to GitHub Pages.
 
 1. Use the existing public `paulofrancissoftware/brainybee_schools_docs` repository.
-2. Commit and push publication-ready documents only after the draft checklist and legal review are complete.
+2. Commit and push public policies only after confirming that they match current product and operational practices. Keep agreement and school-notice templates marked as drafts until their legal review is complete.
 3. In GitHub, open **Settings > Pages** and choose **GitHub Actions** as the source.
 4. Verify every page, then update the Schools app and store listings to the dedicated policy URL.
 
-Do not put Firebase keys, Clever secrets, student data, signed agreements, completed incident registers, exports, or privacy request evidence in this repository.
+Do not put Firebase keys, Clever secrets, student data, signed agreements, completed incident registers, exports, privacy request evidence, or confidential security details in this repository.

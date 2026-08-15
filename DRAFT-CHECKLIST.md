@@ -1,6 +1,6 @@
-# Publication Readiness Checklist
+# Legal and Contract Readiness Checklist
 
-All items below must be resolved before removing the draft banners or publishing these documents as final.
+The public operational policies were adopted as Version 1.0 on August 15, 2026 after the documented product and operational review. The remaining items must be resolved before treating the school agreement, DPA, parent notice, or jurisdiction-specific materials as final. Counsel may also recommend revisions to the published policies; material changes must receive a new effective date and school notice when required.
 
 ## Business identity
 
@@ -13,7 +13,7 @@ All items below must be resolved before removing the draft banners or publishing
 
 ## Product and data handling
 
-- [x] Confirm production Schools builds expose only Clever SSO and do not expose Demo School or email/password test accounts.
+- [x] Confirm production Schools builds expose only Clever SSO and do not expose email/password test accounts. The optional Demo School button starts Clever's demo-district sign-in and is controlled by the production `cleverDemoSignInEnabled` flag.
 - [x] Require an authorized school or district representative, not an individual student, to execute school authorization and contracting documents. A teacher may sign only when the institution has granted that authority.
 - [x] Implement and emulator-test manual organization, class, and student export/deletion procedures with dry-run inventory, guarded execution, verification, and deletion receipts.
 - [x] Run a read-only production inventory for the pilot organization and reconcile the tool with the current Firebase schema.
@@ -57,5 +57,5 @@ All items below must be resolved before removing the draft banners or publishing
 - [ ] Confirm insurance coverage and have counsel approve the proposed general cap, enhanced privacy/security cap, indemnity, governing law, venue, and public-school procurement language.
 - [x] Use direct email notice to each School contact plus a dated public policy update; obtain new authorization or consent before a change when law requires it.
 - [ ] Record the final effective date, policy version, release tag, and Git commit in each signed school file.
-- [ ] Remove every `DRAFT` banner, placeholder marker, and `noindex,nofollow` robots directive only after final approval.
+- [x] Remove draft markers and `noindex,nofollow` from the six adopted public operational documents; preserve draft markers and placeholders on school and legal-review templates until final approval.
 - [ ] Regenerate all Word exports after the final web-document edits and inspect the final packet in Microsoft Word or Apple Pages.
