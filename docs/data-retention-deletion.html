@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="Brainy Bee Schools data retention and deletion schedule.">
   <title>Data Retention and Deletion Policy - Brainy Bee Schools</title>
   <link rel="stylesheet" href="assets/styles.css">
@@ -14,8 +14,9 @@
     <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="data-retention-deletion.html">Retention</a><a href="data-requests.html">Requests</a><a href="security-overview.html">Security</a></nav>
   </header>
   <main class="document">
+    <div class="draft-banner">PROPOSED REVISION 1.1 - NOT APPROVED FOR PUBLICATION. Prepared November 17, 2026. Adopted Version 1.0, effective August 15, 2026, remains operative until this proposed revision is separately approved and published. This draft does not adopt new terms or certify legal compliance.</div>
     <h1>Data Retention and Deletion Policy</h1>
-    <p class="meta"><strong>Effective date:</strong> August 15, 2026<br><strong>Version:</strong> 1.0<br><strong>Policy owner:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Review frequency:</strong> At least annually and after material product changes</p>
+    <p class="meta"><strong>Current adopted policy:</strong> Version 1.0, effective August 15, 2026<br><strong>Proposed revision prepared:</strong> November 17, 2026<br><strong>Proposed revision:</strong> 1.1 draft<br><strong>Policy owner:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Review frequency:</strong> At least annually and after material product changes</p>
 
     <div class="summary">Brainy Bee Schools retains personal information only while it is reasonably necessary for a specific school-authorized educational, security, support, or legal purpose. Children's personal information is not retained indefinitely.</div>
 
@@ -29,6 +30,9 @@
       <li>Do not use retained information for a new incompatible purpose.</li>
     </ul>
 
+    <p>The same educational-purpose and deletion rules apply to school-authorized roster records imported before first sign-in, centrally saved partial Tests, practice plans and calendar summaries, earned rewards, and minimal supporting session or duplicate-prevention records. These records do not receive an unlimited retention period merely because processing occurs in the background.</p>
+    <p>Hiding a practice display or changing a feature setting does not by itself delete existing educational records. Changes to class access or roster sharing do not by themselves establish that all previously retained records have been erased; current authorization and access restrictions must still be respected. Schools should use the <a href="data-requests.html">Data Request Procedure</a> to request deletion of retained records or additional restrictions and state the required scope. The schedule below continues to apply.</p>
+
     <h2>2. Retention schedule</h2>
     <div class="table-wrap">
       <table>
@@ -36,8 +40,8 @@
         <tbody>
           <tr><td>Clever OAuth state and verifier metadata</td><td>Up to 5 minutes; redeemed state is deleted immediately</td><td>Automatic expiry/TTL and scheduled cleanup fallback</td></tr>
           <tr><td>Firebase authentication and Clever identity mapping</td><td>While the user is authorized by an active School agreement</td><td>Delete or disable after School offboarding or verified deletion instruction, within the production deletion target</td></tr>
-          <tr><td>Organization, roster, class membership, and class policy</td><td>Active agreement plus School-requested historical reporting period</td><td>School instruction, account termination, or loss of educational need; production deletion within 60 days</td></tr>
-          <tr><td>Assignments, assignment membership, student answers, scores, question reports, progress, and achievements</td><td>Active agreement plus School-requested historical reporting period</td><td>Student-specific or School-wide deletion instruction, or termination; production deletion within 60 days</td></tr>
+          <tr><td>Organization, roster, class membership, and class policy, including records imported before first sign-in or updated by background Clever synchronization</td><td>Active agreement plus School-requested historical reporting period</td><td>School instruction, account termination, or loss of educational need; production deletion within 60 days</td></tr>
+          <tr><td>Assignments, assignment membership, submitted answers and partial Test attempts, scores, question reports, progress, practice plans/goals and practice-day summaries, earned cosmetic rewards, and minimal learning/session/eligibility receipts</td><td>Active agreement plus School-requested historical reporting period</td><td>Student-specific or School-wide deletion instruction, or termination; production deletion within 60 days</td></tr>
           <tr><td>Staff-supplied class and assignment content</td><td>While the School account is active and the content remains educationally necessary</td><td>Staff deletion, authorized request, or account termination; production deletion within 60 days</td></tr>
           <tr><td>User preferences and active school context stored in Firebase</td><td>While the account is active</td><td>User/School deletion instruction or account termination; production deletion within 60 days</td></tr>
           <tr><td>Local app data and reminder settings</td><td>Until cleared, app removal, or device reset</td><td>User or device administrator clears app data; uninstall removes ordinary local app storage. App-managed files are excluded from Android and Apple cloud backup and device transfer.</td></tr>
@@ -76,8 +80,8 @@
     <h2>7. Requests</h2>
     <p>Schools and verified families may submit retention or deletion questions using the <a href="data-requests.html">Data Request Procedure</a> or by emailing <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a>.</p>
 
-    <p class="fine-print">Manual Firebase export, correction, reversible access holds, scoped deletion, and post-operation verification are emulator-tested. Production access rules and Clever sign-in enforce active access status. OAuth expiry and scheduled cleanup, device backup exclusions, Cloud Logging retention, database deletion protection, and seven-day Firestore point-in-time recovery were verified in production on August 2, 2026.</p>
+    <p class="fine-print">Historical evidence: manual Firebase export, correction, reversible access holds, scoped deletion, and post-operation verification were emulator-tested. OAuth expiry and scheduled cleanup, device backup exclusions, Cloud Logging retention, database deletion protection, and seven-day Firestore point-in-time recovery were verified in production on August 2, 2026. Current release and operational evidence must be reconciled before adopting this proposed revision; this draft is not a fresh verification of deployed access or retention controls.</p>
   </main>
-  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Privacy Center</a> | Version 1.0 | Effective August 15, 2026</div></footer>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Privacy Center</a> | Proposed 1.1 draft - November 17, 2026 | Adopted Version 1.0 remains effective August 15, 2026</div></footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="Public security overview for Brainy Bee Schools.">
   <title>Security Overview - Brainy Bee Schools</title>
   <link rel="stylesheet" href="assets/styles.css">
@@ -14,8 +14,9 @@
     <nav class="site-nav" aria-label="Legal documents"><a href="privacy-policy.html">Privacy</a><a href="data-privacy-addendum.html">DPA</a><a href="security-overview.html">Security</a><a href="subprocessors.html">Subprocessors</a><a href="data-requests.html">Requests</a></nav>
   </header>
   <main class="document">
+    <div class="draft-banner">PROPOSED REVISION 1.1 - NOT APPROVED FOR PUBLICATION. Prepared November 17, 2026. Adopted Version 1.0, effective August 15, 2026, remains operative until this proposed revision is separately approved and published. This draft does not adopt new terms or certify legal compliance.</div>
     <h1>Brainy Bee Schools Security Overview</h1>
-    <p class="meta"><strong>Effective date:</strong> August 15, 2026<br><strong>Version:</strong> 1.0<br><strong>Security contact:</strong> <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a></p>
+    <p class="meta"><strong>Current adopted policy:</strong> Version 1.0, effective August 15, 2026<br><strong>Proposed revision prepared:</strong> November 17, 2026<br><strong>Proposed revision:</strong> 1.1 draft<br><strong>Security contact:</strong> <a href="mailto:paulofrancis.software@gmail.com">paulofrancis.software@gmail.com</a></p>
 
     <div class="summary">Brainy Bee Schools uses layered technical and administrative safeguards intended to protect school and student information. This public overview avoids operational details that could weaken security. More detailed responses may be provided to a verified School under appropriate confidentiality terms.</div>
 
@@ -29,7 +30,7 @@
 
     <h2>2. Identity and access</h2>
     <ul>
-      <li>Production school users authenticate through Clever and receive a Firebase session tied to the verified Clever identity.</li>
+      <li>Production school users authenticate through Clever and receive a Firebase session tied to the verified Clever identity. A separately controlled demonstration entry, where enabled, also uses Clever synthetic accounts; it is not consumer email/password enrollment.</li>
       <li>Access is evaluated using organization membership, role, school license status, class membership, and class policy.</li>
       <li>Students cannot grant themselves teacher permissions, edit organization licenses, or browse the full school directory.</li>
       <li>Authorized teachers receive access only to assigned or owned classes and associated educational records.</li>
@@ -40,7 +41,7 @@
     <ul>
       <li>Network communication with Firebase, Clever, and published legal resources uses HTTPS/TLS.</li>
       <li>Student Data is stored in Firebase services with access controlled by authenticated identities, application authorization checks, and Firestore security rules.</li>
-      <li>Firebase client API keys are limited to Firebase-related APIs and restricted to the Schools iOS bundle, Android package and approved signing certificates, or the Schools documentation web origin.</li>
+      <li>Firebase client API keys identify the configured project; they are not a substitute for authenticated authorization and do not independently grant access to Student Data. Release checks must verify applicable API, app-identity, and signing-certificate restrictions against the actual deployed settings. This proposed overview does not attest that every such restriction has been verified for every current binary or distribution path.</li>
       <li>Secrets and privileged service-account credentials must be stored outside source control and rotated when exposure is suspected.</li>
       <li>Local app data is isolated within the mobile app's storage, and app-managed files are excluded from Apple and Android cloud backup and device transfer.</li>
       <li>Student information is not used for advertising, and the Android Schools manifest removes advertising-ID permissions.</li>
@@ -54,6 +55,8 @@
       <li>OAuth state expires after five minutes, is single-use, is deleted after redemption, and has a scheduled cleanup fallback.</li>
       <li>Input size and document identifier checks are applied to school administration and Firebase operations.</li>
     </ul>
+
+    <p>Initial school-authorized roster import and recurring/background Clever synchronization are distinct from a student's interactive sign-in. School authorization and the approved roster-sharing scope must be established before processing real Student Data. Certification is not a substitute for school authorization, privacy review, or release-specific security verification.</p>
 
     <h2>5. Service providers</h2>
     <p>Provider reviews the purpose and data access of services that process Student Data and seeks written privacy and security assurances appropriate to their role. The current providers are listed on the <a href="subprocessors.html">Subprocessor List</a>.</p>
@@ -82,8 +85,8 @@
     <h2>10. Current assurance status</h2>
     <p>Brainy Bee Schools does not currently claim SOC 2, ISO 27001, FedRAMP, or COPPA Safe Harbor certification. A claim of legal compliance or certification will be made only when supported by the applicable review or approval.</p>
 
-    <p class="fine-print">Production Firebase rules, runtime identity, credential storage, backup exclusions, logging configuration, database protection, deletion tooling, OAuth cleanup, risk assessment, and incident-response documentation were reviewed or tested on August 2, 2026.</p>
+    <p class="fine-print">Historical evidence: production Firebase rules, runtime identity, credential storage, backup exclusions, logging configuration, database protection, deletion tooling, OAuth cleanup, risk assessment, and incident-response documentation were reviewed or tested on August 2, 2026. That historical review does not verify every current release or configuration. Current operational evidence and the final artifacts must be reconciled before this proposed revision is adopted.</p>
   </main>
-  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Privacy Center</a> | Version 1.0 | Effective August 15, 2026</div></footer>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Privacy Center</a> | Proposed 1.1 draft - November 17, 2026 | Adopted Version 1.0 remains effective August 15, 2026</div></footer>
 </body>
 </html>

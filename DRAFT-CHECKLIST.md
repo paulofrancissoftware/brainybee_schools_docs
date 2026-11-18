@@ -2,6 +2,19 @@
 
 The public operational policies were adopted as Version 1.0 on August 15, 2026 after the documented product and operational review. The remaining items must be resolved before treating the school agreement, DPA, parent notice, or jurisdiction-specific materials as final. Counsel may also recommend revisions to the published policies; material changes must receive a new effective date and school notice when required.
 
+## November 17 revision status
+
+The proposed Version 1.1 policy revisions and Draft 0.2 agreement/notice templates are local review copies. Their preparation is not legal approval, adoption, publication or school authorization. Historical checked items below retain their original scope and do not establish the current release's deployed configuration or final store answers.
+
+- [x] Reconcile proposed descriptions with initial and recurring/background Clever roster imports, including processing before first login and while the app is closed.
+- [x] Describe saved partial Tests, educational practice plans/goals, practice and reward evidence, and device information within the existing school-authorized purposes.
+- [x] Correct controlled Clever Demo wording and remove the unsupported blanket assertion that every live client API key restriction is already verified.
+- [ ] Verify current production controls, provider assurances, retention/deletion operation, API-key restrictions and final binary/store disclosures; proposed text is not that evidence.
+- [ ] Obtain owner/legal approval for revised policy text, effective date, required school notice and any new authorization/consent before a material change when required.
+- [ ] Obtain the district's required DPA/state addendum, procurement process and actual delegated contracting signatory.
+- [ ] Complete the Order Form and final agreement/DPA review without treating unfilled district fields or draft commercial/jurisdiction terms as accepted.
+- [ ] Publish only the approved revision and preserve the exact accepted policy/subprocessor versions privately with each school agreement.
+
 ## Business identity
 
 - [x] Identify Chi Cheung Lau as the legal operator contracting with schools.
@@ -46,6 +59,7 @@ The public operational policies were adopted as Version 1.0 on August 15, 2026 a
 - [x] Remove inapplicable Schools privacy-manifest declarations, including Photos/Videos and Purchase History.
 - [x] Re-audit the version 2.49 iOS and Android binaries for SDKs, network domains, permissions, and collected fields. No advertising, analytics, tracking, Storage, camera, location, microphone, photo, or payment capability was found.
 - [x] Prepare App Store Connect and Google Play disclosure answers that match the version 2.49 binaries and these documents in the app repository's `PRODUCTION-READINESS.md`.
+- [ ] Reconcile the final version 2.57 or later release artifacts, deployed configuration and newer learning-record inventory with current store forms. The historical 2.49 audit and later source notes do not replace this check.
 - [ ] Enter and confirm those disclosures in App Store Connect and Google Play when uploading the final signed builds.
 
 ## Legal review and school procurement
@@ -58,4 +72,5 @@ The public operational policies were adopted as Version 1.0 on August 15, 2026 a
 - [x] Use direct email notice to each School contact plus a dated public policy update; obtain new authorization or consent before a change when law requires it.
 - [ ] Record the final effective date, policy version, release tag, and Git commit in each signed school file.
 - [x] Remove draft markers and `noindex,nofollow` from the six adopted public operational documents; preserve draft markers and placeholders on school and legal-review templates until final approval.
+- [ ] Keep the newly proposed policy revisions marked as drafts until their own approval/publication decision; the previous adopted-version checklist item does not approve these revisions.
 - [ ] Regenerate all Word exports after the final web-document edits and inspect the final packet in Microsoft Word or Apple Pages.

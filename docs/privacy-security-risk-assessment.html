@@ -13,11 +13,12 @@
     <nav class="site-nav" aria-label="Legal documents"><a href="security-overview.html">Security</a><a href="information-security-program.html">Program</a><a href="incident-response-plan.html">Incidents</a><a href="quebec-privacy-impact-assessment.html">PIA</a></nav>
   </header>
   <main class="document">
-    <div class="draft-banner">INITIAL ASSESSMENT COMPLETE - COUNSEL REVIEW PENDING</div>
+    <div class="draft-banner">PROPOSED CURRENT-PRODUCT REASSESSMENT - NOT APPROVED. Prepared November 17, 2026. The August 2, 2026 initial assessment and acceptance below are historical; this draft does not issue a new risk acceptance, legal approval, or production-launch decision.</div>
+    <div class="draft-banner">HISTORICAL INITIAL ASSESSMENT COMPLETE - CURRENT REASSESSMENT AND COUNSEL REVIEW PENDING</div>
     <h1>Privacy and Security Risk Assessment</h1>
     <p class="meta"><strong>Assessor and owner:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Assessment date:</strong> August 2, 2026<br><strong>Scope:</strong> Brainy Bee Schools mobile apps, Firebase/Google Cloud backend, Clever integration, source repositories, and manual administration</p>
 
-    <div class="summary">The assessment considered reasonably foreseeable internal and external risks to children's and school information. The current release may proceed to a limited school pilot with the controls below, subject to counsel review, school authorization, store disclosure completion, and continued monitoring.</div>
+    <div class="summary">The August 2, 2026 initial assessment considered reasonably foreseeable internal and external risks to children's and school information and recorded a conditional pilot decision. That historical decision is not an approval of the current release. This proposed reassessment requires current evidence, counsel and district review, school authorization, final store disclosure checks, and continued monitoring before a new acceptance decision.</div>
 
     <h2>1. Method</h2>
     <p>Likelihood and impact are scored from 1 (low) to 5 (very high). Residual score is likelihood multiplied by impact after controls: 1-4 low, 5-9 moderate, 10-15 high, and 16-25 critical. A high or critical residual risk blocks production unless the Privacy Officer documents additional mitigation and acceptance.</p>
@@ -25,17 +26,20 @@
     <h2>2. Data sensitivity and exposure</h2>
     <p>Student identity, class membership, answers, scores, progress, and teacher assignments are sensitive because they concern children and may be education records. The Service does not intentionally collect payment cards, government identifiers, precise location, contacts, health data, camera or microphone content, public posts, or advertising identifiers. Production processing is concentrated in Clever and Google Firebase/Cloud in the United States.</p>
 
+    <p>This proposed reconciliation considers the documented version 2.57 data flows: school-authorized initial/background Clever roster synchronization, centrally saved partial Tests, practice plans and calendar summaries, earned rewards and their minimal session/duplicate-prevention records, and stored device-model information. It does not change the educational purpose or retention commitments. Final deployed configuration, store binaries, school authorization and operational evidence must be checked before accepting a current-product risk assessment.</p>
+
     <h2>3. Risk register</h2>
+    <p>The numeric ratings below are retained only as the August 2 historical baseline. Safeguard descriptions identify current reconciliation points where known; the ratings must be reassessed against current evidence and are not an assertion that version 2.57 has no high or critical risks.</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Risk</th><th>Key safeguards</th><th>Residual</th><th>Owner/action</th></tr></thead>
+        <thead><tr><th>Risk</th><th>Safeguards and current review considerations</th><th>Historical August 2 residual rating, not a current approval</th><th>Owner/action</th></tr></thead>
         <tbody>
           <tr><td>Unauthorized privileged access or credential compromise</td><td>Named operator account, MFA requirement, no service-account keys, Secret Manager, dedicated least-privilege runtime identity, quarterly access review</td><td>Moderate: 8</td><td>Privacy Officer; verify MFA and access review quarterly</td></tr>
           <tr><td>Cross-school, cross-class, or role escalation</td><td>Firestore rules, server-side organization/role/class checks, active-license checks, privacy holds, emulator authorization tests</td><td>Moderate: 5</td><td>Privacy Officer; rerun rules tests after schema or feature changes</td></tr>
-          <tr><td>Test or alternate sign-in bypass in production</td><td>Clever-only app bridges, demo and email/password paths removed, Firebase email provider disabled, test credentials not bundled</td><td>Low: 3</td><td>Release review on every production build</td></tr>
+          <tr><td>Test or alternate sign-in bypass in production</td><td>Clever-only app bridges, consumer email/password enrollment not exposed; a controlled Clever demonstration entry may be enabled for synthetic accounts; test credentials are not bundled</td><td>Low: 3</td><td>Release review on every production build</td></tr>
           <tr><td>OAuth interception, replay, or stale state</td><td>HTTPS, random single-use state, five-minute expiry, delete-on-redemption transaction, TTL, authenticated scheduled cleanup every 15 minutes</td><td>Low: 4</td><td>Monitor callback and cleanup errors</td></tr>
           <tr><td>Secret committed to source control</td><td>Prior key revoked and history rewritten, key patterns ignored, no runtime key files, Secret Manager, binary and repository secret scans</td><td>Moderate: 6</td><td>Scan before release; rotate immediately after suspected exposure</td></tr>
-          <tr><td>Firebase client API key reused by an unauthorized app</td><td>Firebase API restrictions, iOS bundle restriction, Android package and signing-certificate restrictions, browser-origin restriction</td><td>Low: 3</td><td>Add the Play App Signing SHA-1 before Play distribution and review restrictions after signing changes</td></tr>
+          <tr><td>Firebase client API key reused by an unauthorized app</td><td>Authenticated server checks and Firestore authorization remain the data-access boundary; applicable Firebase API, app-identity and signing-certificate restrictions require verification against current deployed configuration</td><td>Low: 3</td><td>Verify the Google-held Play app-signing certificate and any required API/app restrictions for the final release; an upload-key reset is not an app-signing-key change. Current restriction evidence remains to be confirmed.</td></tr>
           <tr><td>Over-collection or collection after a stop request</td><td>Minimal Clever scopes and app fields, no ads/analytics SDK, reversible access hold, client writes require active access, manual scope inventory</td><td>Moderate: 6</td><td>Review data map before adding fields or SDKs</td></tr>
           <tr><td>Failure to delete or incomplete offboarding</td><td>Guarded export/deletion tools, dry run, project/scope confirmation, emulator tests, residual verification, non-data receipt, seven-day recovery expiry</td><td>Moderate: 8</td><td>Use two-pass verification for every production deletion</td></tr>
           <tr><td>Loss or leakage through a mobile device or backup</td><td>App sandbox, sign-out cleanup, role checks, no student passwords, Android backup disabled, iOS and Android app files excluded from backup/transfer</td><td>Moderate: 6</td><td>Schools manage devices and report loss promptly</td></tr>
@@ -57,10 +61,11 @@
     </ul>
 
     <h2>5. Decision</h2>
-    <p>No residual technical risk is rated high or critical after the implemented controls. A limited, free pilot may proceed after the launch gates in the Publication Readiness Checklist are completed. This decision must be revisited after a material architecture change, a security event, a new subprocessor, or no later than August 2, 2027.</p>
-    <p><strong>Accepted by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Date:</strong> August 2, 2026</p>
+    <blockquote><p><strong>Historical August 2, 2026 decision:</strong> No residual technical risk is rated high or critical after the implemented controls. A limited, free pilot may proceed after the launch gates in the Publication Readiness Checklist are completed. This decision must be revisited after a material architecture change, a security event, a new subprocessor, or no later than August 2, 2027.</p></blockquote>
+    <p><strong>Current-product reassessment pending:</strong> the historical statement is not a fresh approval of version 2.57, its production credentials, current API restrictions, or a school deployment. Complete the evidence, legal/district review and release gates before recording a new decision and acceptance date.</p>
+    <p><strong>Historical initial assessment accepted by:</strong> Chi Cheung Lau, Owner and Privacy Officer<br><strong>Date:</strong> August 2, 2026</p>
     <p class="fine-print">Detailed access evidence, command output, provider account records, and completed incident records are private and are not stored in this public repository.</p>
   </main>
-  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Initial Privacy and Security Risk Assessment | August 2, 2026</div></footer>
+  <footer class="site-footer"><div class="site-footer-inner"><a href="index.html">Document index</a> | Proposed reassessment - November 17, 2026 | Historical initial assessment August 2, 2026</div></footer>
 </body>
 </html>
